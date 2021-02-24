@@ -2,18 +2,18 @@
 	"threads": 2,
 	"coin": "ethereum-pplns",
 	"name": "main",
-	"pplns": 1000000,
+	"pplns": 150000,
 	"coin-name":"ETH",
 
 	"proxy": {
 		"enabled": true,
-		"listen": "0.0.0.0:40001",
+		"listen": "0.0.0.0:8989",
 		"limitHeadersSize": 1024,
 		"limitBodySize": 256,
 		"behindReverseProxy": false,
 		"blockRefreshInterval": "50ms",
 		"stateUpdateInterval": "3s",
-		"difficulty": 4000000000,
+		"difficulty": 2000000000,
 		"hashrateExpiration": "3h",
 
 		"healthCheck": true,
@@ -21,14 +21,14 @@
 
 		"stratum": {
 			"enabled": true,
-			"listen": "0.0.0.0:40011",
+			"listen": "0.0.0.0:8002",
 			"timeout": "120s",
 			"maxConn": 8192
 		},
 
 		"stratum_ssl": {
 			"enabled": true,
-			"listen": "0.0.0.0:5555",
+			"listen": "0.0.0.0:11012",
 			"timeout": "120s",
 			"maxConn": 8192,
 			"certfile": "/home/daggerpool_com/ssl/etc02.miningpoolindia.org.pem",
@@ -82,22 +82,22 @@
 	"upstreamCheckInterval": "5s",
 	"upstream": [
 		{
-			"name": "mumbai",
-			"url": "http://10.4.1.10:8000",
+			"name": "main",
+			"url": "http://127.0.0.1:8545",
 			"timeout": "10s"
 		},
 		{
 			"name": "backup",
-			"url": "http://10.4.1.11:8545",
+			"url": "http://127.0.0.1:8549",
 			"timeout": "10s"
 		}
 	],
 
 	"redis": {
-		"endpoint": "10.4.10.100:6379",
+		"endpoint": "127.0.0.1:6379",
 		"poolSize": 10,
-		"database": 8,
-		"password": "9B3D8aD6705d246C82dBaA0DC10D2C7Ce47115Af"
+		"database": 0,
+		"password": ""
 	},
 
 	"unlocker": {
